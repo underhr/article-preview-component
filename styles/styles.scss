@@ -43,11 +43,11 @@ body {
 
 #container {
     @include flex(center, stretch, row);
-    width: 730px;
     box-shadow: 0px 40px 40px #C9D5E1;
     background-color: white;
     border-radius: 10px;
     margin: 40px;
+    width: 730px;
 
     img {
         width: 285px;
@@ -98,6 +98,30 @@ body {
                     width: 15px;
                     border-radius: 0;
                 }
+            }
+        }
+    }
+}
+
+// tablet view
+@media only screen and (max-width: 800px) {
+    #container {
+        width: 600px;
+    }
+}
+
+// mobile view
+@media only screen and (max-width: 650px) {
+    #container {
+        margin: 65px 42px;
+        flex-direction: column;
+        img {
+            width: 100%;
+            border-radius: 10px 10px 0px 0px;
+        }
+        #textContent {
+            #authorInfo {
+                margin-top: 24px;
             }
         }
     }

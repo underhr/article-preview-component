@@ -1,0 +1,35 @@
+//variables
+$grey900: #48556A;
+$grey500: #6E8098;
+$grey400: #9DAEC2;
+$grey200: #ECF2F8;
+
+//fonts
+@font-face {
+    font-family: manrope;
+    src: url(../fonts/Manrope-VariableFont_wght.ttf);
+}
+
+//mixins
+@mixin center {
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+}
+@mixin text($color, $size, $weight, $height) {
+    font-family: manrope;
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+}
+
+//styles
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    @include center;
+}

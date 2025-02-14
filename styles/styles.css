@@ -1,1 +1,14 @@
-/*# sourceMappingURL=styles.css.map */
+@font-face {
+  font-family: manrope;
+  src: url(../fonts/Manrope-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */

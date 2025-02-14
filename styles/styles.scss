@@ -4,7 +4,7 @@ $grey500: #6E8098;
 $grey400: #9DAEC2;
 $grey200: #ECF2F8;
 
-$bold: 700;
+$bold: 600;
 $medium: 500;
 
 //fonts
@@ -14,10 +14,11 @@ $medium: 500;
 }
 
 //mixins
-@mixin center {
+@mixin flex($justify, $align, $direction) {
     display: flex;
-    justify-content: center;;
-    align-items: center;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
 }
 @mixin text($color, $size, $weight, $height, $space) {
     font-family: manrope;
@@ -31,23 +32,31 @@ $medium: 500;
 //styles
 * {
     margin: 0;
-    border: 1px solid blue;
+    box-sizing: border-box;
 }
 
 body {
     height: 100vh;
-    @include center;
+    @include flex(center, center, row);
+    background-color: $grey200;
 }
 
 #container {
+    @include flex(center, stretch, row);
     width: 730px;
-    @include center;
+    box-shadow: 0px 40px 40px #C9D5E1;
+    background-color: white;
+    border-radius: 10px;
+    margin: 40px;
 
     img {
         width: 285px;
+        border-radius: 10px 0px 0px 10px;
     }
-
     #textContent {
+        @include flex(space-evenly, center, column);
+        gap: 24px;
+        padding: 40px;
         h1 {
             @include text($grey900, 20px, $bold, 130%, 0.25px);
         }
@@ -55,11 +64,21 @@ body {
             @include text($grey500, 13px, $medium, 140%, 0.12px);
         }
         #authorInfo {
+            @include flex(space-between, center, row);
+            width: 100%;
+            
             #infoLeft {
+                display: flex;
+                align-items: center;
+                gap: 16px;
                 img {
-
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
                 }
                 #nameDate {
+                    display: flex;
+                    flex-direction: column;
                     #name {
                         @include text($grey900, 13px, $bold, 140%, 0.12px);
                     }
@@ -68,8 +87,17 @@ body {
                     }
                 }
             }
-            img {
-
+            #shareCircle {
+                @include flex(center, center, row);
+                height: 32px;
+                min-width: 32px;
+                background-color: $grey200;
+                border-radius: 50%;
+                img {
+                    height: 13px;
+                    width: 15px;
+                    border-radius: 0;
+                }
             }
         }
     }

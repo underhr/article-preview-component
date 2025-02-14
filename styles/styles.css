@@ -4,7 +4,7 @@
 }
 * {
   margin: 0;
-  border: 1px solid blue;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,22 +12,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  background-color: #ECF2F8;
 }
 
 #container {
-  width: 730px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  flex-direction: row;
+  width: 730px;
+  box-shadow: 0px 40px 40px #C9D5E1;
+  background-color: white;
+  border-radius: 10px;
+  margin: 40px;
 }
 #container img {
   width: 285px;
+  border-radius: 10px 0px 0px 10px;
+}
+#container #textContent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
 }
 #container #textContent h1 {
   font-family: manrope;
   color: #48556A;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.25px;
 }
@@ -39,11 +55,32 @@ body {
   line-height: 140%;
   letter-spacing: 0.12px;
 }
+#container #textContent #authorInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+#container #textContent #authorInfo #infoLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#container #textContent #authorInfo #infoLeft img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+#container #textContent #authorInfo #infoLeft #nameDate {
+  display: flex;
+  flex-direction: column;
+}
 #container #textContent #authorInfo #infoLeft #nameDate #name {
   font-family: manrope;
   color: #48556A;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 140%;
   letter-spacing: 0.12px;
 }
@@ -54,4 +91,19 @@ body {
   font-weight: 500;
   line-height: 140%;
   letter-spacing: 0.12px;
+}
+#container #textContent #authorInfo #shareCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 32px;
+  min-width: 32px;
+  background-color: #ECF2F8;
+  border-radius: 50%;
+}
+#container #textContent #authorInfo #shareCircle img {
+  height: 13px;
+  width: 15px;
+  border-radius: 0;
 }/*# sourceMappingURL=styles.css.map */

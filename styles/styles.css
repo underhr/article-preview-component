@@ -4,6 +4,7 @@
 }
 * {
   margin: 0;
+  border: 1px solid blue;
 }
 
 body {
@@ -11,4 +12,46 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#container {
+  width: 730px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container img {
+  width: 285px;
+}
+#container #textContent h1 {
+  font-family: manrope;
+  color: #48556A;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.25px;
+}
+#container #textContent p {
+  font-family: manrope;
+  color: #6E8098;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.12px;
+}
+#container #textContent #authorInfo #infoLeft #nameDate #name {
+  font-family: manrope;
+  color: #48556A;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.12px;
+}
+#container #textContent #authorInfo #infoLeft #nameDate #date {
+  font-family: manrope;
+  color: #9DAEC2;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.12px;
 }/*# sourceMappingURL=styles.css.map */

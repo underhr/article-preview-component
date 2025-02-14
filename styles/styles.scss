@@ -4,6 +4,9 @@ $grey500: #6E8098;
 $grey400: #9DAEC2;
 $grey200: #ECF2F8;
 
+$bold: 700;
+$medium: 500;
+
 //fonts
 @font-face {
     font-family: manrope;
@@ -16,20 +19,58 @@ $grey200: #ECF2F8;
     justify-content: center;;
     align-items: center;
 }
-@mixin text($color, $size, $weight, $height) {
+@mixin text($color, $size, $weight, $height, $space) {
     font-family: manrope;
     color: $color;
     font-size: $size;
     font-weight: $weight;
     line-height: $height;
+    letter-spacing: $space;
 }
 
 //styles
 * {
     margin: 0;
+    border: 1px solid blue;
 }
 
 body {
     height: 100vh;
     @include center;
+}
+
+#container {
+    width: 730px;
+    @include center;
+
+    img {
+        width: 285px;
+    }
+
+    #textContent {
+        h1 {
+            @include text($grey900, 20px, $bold, 130%, 0.25px);
+        }
+        p {
+            @include text($grey500, 13px, $medium, 140%, 0.12px);
+        }
+        #authorInfo {
+            #infoLeft {
+                img {
+
+                }
+                #nameDate {
+                    #name {
+                        @include text($grey900, 13px, $bold, 140%, 0.12px);
+                    }
+                    #date {
+                        @include text($grey400, 13px, $medium, 140%, 0.12px);
+                    }
+                }
+            }
+            img {
+
+            }
+        }
+    }
 }

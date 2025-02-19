@@ -30,6 +30,9 @@ $medium: 500;
 }
 
 //styles
+.hidden {
+    display: none !important;
+}
 * {
     margin: 0;
     box-sizing: border-box;
@@ -48,7 +51,7 @@ body {
     border-radius: 10px;
     margin: 40px;
     width: 730px;
-
+    position: relative;
     img {
         width: 285px;
         border-radius: 10px 0px 0px 10px;
@@ -66,7 +69,6 @@ body {
         #authorInfo {
             @include flex(space-between, center, row);
             width: 100%;
-            
             #infoLeft {
                 display: flex;
                 align-items: center;
@@ -87,31 +89,73 @@ body {
                     }
                 }
             }
-            #shareCircle {
+            .shareCircle {
                 @include flex(center, center, row);
                 height: 32px;
                 min-width: 32px;
                 background-color: $grey200;
                 border-radius: 50%;
+                cursor: pointer;
                 img {
                     height: 13px;
                     width: 15px;
                     border-radius: 0;
+                    user-select: none;
                 }
             }
+        }
+    }
+    #shareBlock {
+        @include flex(center, center, column);
+        position: absolute;
+        right: -70px;
+        bottom: 85px;
+        #main {
+            @include flex(center, center, row);
+            background-color: $grey900;
+            padding: 18px 38px;
+            border-radius: 10px;
+            gap: 16px;
+            #mainLeft {
+                @include flex(center, center, row);
+                gap: 16px;
+            }
+            p {
+                @include text($grey500, 13px, $medium, 140%, 25%);
+                color: $grey400;
+                margin-right: 8px;
+                user-select: none;
+                cursor: default;
+            }
+            img {
+                border-radius: 0;
+                height: 20px;
+                width: auto;
+                cursor: pointer;
+            }
+            .shareCircle {
+                display: none;
+            }
+        }
+        #triangle {
+            width: 0; 
+            height: 0;
+            border-left: 12px solid transparent; 
+            border-right: 12px solid transparent; 
+            border-top: 12px solid $grey900;
         }
     }
 }
 
 // tablet view
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 875px) {
     #container {
         width: 600px;
     }
 }
 
 // mobile view
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 745px) {
     #container {
         margin: 65px 42px;
         flex-direction: column;
@@ -121,7 +165,47 @@ body {
         }
         #textContent {
             #authorInfo {
-                margin-top: 24px;
+                margin-top: 30px;
+                margin-bottom: -26px;
+            }
+        }
+        #shareBlock {
+            flex-direction: row;
+            background-color: $grey900;
+            border-radius: 0px 0px 10px 10px;
+            right: 0;
+            bottom: 0;
+            height: 76px;
+            margin: auto;
+            position: relative;
+            width: 100%;
+            #main {
+                @include flex(space-between, center, row);
+                width: 100%;
+                gap: 16px;
+                #mainLeft {
+                    @include flex(center, center, row);
+                    gap: 16px;
+                }
+                .shareCircle {
+                    @include flex(center, center, row);
+                    height: 32px;
+                    min-width: 32px;
+                    margin-right: 2px;
+                    background-color: $grey500;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    img {
+                        height: 13px;
+                        width: 15px;
+                        border-radius: 0;
+                        user-select: none;
+                    }
+                }
+            }
+            
+            #triangle {
+                display: none;
             }
         }
     }

@@ -2,6 +2,10 @@
   font-family: manrope;
   src: url(../fonts/Manrope-VariableFont_wght.ttf);
 }
+.hidden {
+  display: none !important;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -26,6 +30,7 @@ body {
   border-radius: 10px;
   margin: 40px;
   width: 730px;
+  position: relative;
 }
 #container img {
   width: 285px;
@@ -92,7 +97,7 @@ body {
   line-height: 140%;
   letter-spacing: 0.12px;
 }
-#container #textContent #authorInfo #shareCircle {
+#container #textContent #authorInfo .shareCircle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,19 +106,79 @@ body {
   min-width: 32px;
   background-color: #ECF2F8;
   border-radius: 50%;
+  cursor: pointer;
 }
-#container #textContent #authorInfo #shareCircle img {
+#container #textContent #authorInfo .shareCircle img {
   height: 13px;
   width: 15px;
   border-radius: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#container #shareBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: -70px;
+  bottom: 85px;
+}
+#container #shareBlock #main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #48556A;
+  padding: 18px 38px;
+  border-radius: 10px;
+  gap: 16px;
+}
+#container #shareBlock #main #mainLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+}
+#container #shareBlock #main p {
+  font-family: manrope;
+  color: #6E8098;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 25%;
+  color: #9DAEC2;
+  margin-right: 8px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+#container #shareBlock #main img {
+  border-radius: 0;
+  height: 20px;
+  width: auto;
+  cursor: pointer;
+}
+#container #shareBlock #main .shareCircle {
+  display: none;
+}
+#container #shareBlock #triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #48556A;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 875px) {
   #container {
     width: 600px;
   }
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 745px) {
   #container {
     margin: 65px 42px;
     flex-direction: column;
@@ -123,6 +188,56 @@ body {
     border-radius: 10px 10px 0px 0px;
   }
   #container #textContent #authorInfo {
-    margin-top: 24px;
+    margin-top: 30px;
+    margin-bottom: -26px;
+  }
+  #container #shareBlock {
+    flex-direction: row;
+    background-color: #48556A;
+    border-radius: 0px 0px 10px 10px;
+    right: 0;
+    bottom: 0;
+    height: 76px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+  }
+  #container #shareBlock #main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 16px;
+  }
+  #container #shareBlock #main #mainLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+  }
+  #container #shareBlock #main .shareCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 32px;
+    min-width: 32px;
+    margin-right: 2px;
+    background-color: #6E8098;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  #container #shareBlock #main .shareCircle img {
+    height: 13px;
+    width: 15px;
+    border-radius: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  #container #shareBlock #triangle {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */
